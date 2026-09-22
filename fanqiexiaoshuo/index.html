@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="番茄小说免费版 - 提供海量正版免费小说资源，涵盖玄幻、言情、都市、历史等热门题材。在线阅读无广告干扰，支持离线下载与多端同步，满足您的阅读需求。">
+    <meta name="keywords" content="番茄小说免费版,免费小说,在线阅读,小说推荐,番茄小说">
+    <title>番茄小说免费版-海量正版免费小说与在线阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b35;
+            --secondary-color: #ff8c42;
+            --bg-color: #f8f9fa;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --white: #ffffff;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 24px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px 2px 0 0;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #e55a2b;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5f2 0%, #ffffff 100%);
+            padding: 60px 0;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(255, 107, 53, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .stat-item h3 {
+            font-size: 24px;
+            color: var(--text-main);
+        }
+
+        .stat-item p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+        }
+
+        /* Categories */
+        .categories-section {
+            padding: 40px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+            border-color: rgba(255, 107, 53, 0.2);
+        }
+
+        .cat-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #fff5f2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Book Grid */
+        .book-section {
+            padding: 40px 0;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 24px;
+        }
+
+        .book-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .book-card:hover {
+            box-shadow: var(--card-shadow);
+            transform: translateY(-4px);
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+
+        .book-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .book-info {
+            padding: 12px;
+        }
+
+        .book-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .book-author {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .book-tags span {
+            display: inline-block;
+            font-size: 10px;
+            padding: 2px 6px;
+            background-color: #f0f0f0;
+            color: var(--text-secondary);
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+
+        /* Features */
+        .features-section {
+            background-color: var(--white);
+            padding: 80px 0;
+            margin: 40px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            font-size: 32px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Download App Section */
+        .download-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            color: var(--white);
+            border-radius: var(--radius-lg);
+            margin: 60px 20px;
+        }
+
+        .download-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .download-text {
+            flex: 1;
+        }
+
+        .download-text h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .download-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .app-btn {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 10px 24px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .app-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .app-btn img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #999;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: var(--white);
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .app-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-actions {
+                display: none;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .book-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner flex-between">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>番茄小说免费版</span>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">玄幻</a></li>
+                    <li><a href="#">都市</a></li>
+                    <li><a href="#">言情</a></li>
+                    <li><a href="#">历史</a></li>
+                    <li><a href="#">科幻</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">免费注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-tag">正版免费阅读</span>
+                    <h1>海量小说 <span class="highlight">免费读</span><br>随时随地想看就看</h1>
+                    <p>番茄小说免费版提供海量正版网络小说资源，涵盖玄幻、言情、都市、历史等热门题材。无广告干扰，支持离线下载，为您打造沉浸式阅读体验。</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>5000万+</h3>
+                            <p>正版小说</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1亿+</h3>
+                            <p>注册用户</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>0元</h3>
+                            <p>会员免费</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/fanqie/500/600" alt="番茄小说阅读界面展示" width="500" height="600">
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="container categories-section">
+            <h2 class="section-title">热门分类</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="cat-icon">🔥</div>
+                    <h3>玄幻奇幻</h3>
+                    <p>修仙、魔法、异能</p>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">🏙️</div>
+                    <h3>都市职场</h3>
+                    <p>重生、逆袭、商战</p>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">💕</div>
+                    <h3>现代言情</h3>
+                    <p>甜宠、虐恋、校园</p>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">📜</div>
+                    <h3>历史军事</h3>
+                    <p>权谋、战争、穿越</p>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">🚀</div>
+                    <h3>科幻未来</h3>
+                    <p>星际、机甲、探索</p>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">👻</div>
+                    <h3>悬疑推理</h3>
+                    <p>破案、惊悚、探案</p>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">👶</div>
+                    <h3>儿童文学</h3>
+                    <p>童话、科普、成长</p>
+                </div>
+                <div class="category-card">
+                    <div class="cat-icon">📚</div>
+                    <h3>名著经典</h3>
+                    <p>中外名著、传记</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Books -->
+        <section class="container book-section">
+            <div class="flex-between" style="margin-bottom: 24px;">
+                <h2 class="section-title">今日推荐</h2>
+                <a href="#" style="color: var(--primary-color); font-size: 14px;">查看更多 &rarr;</a>
+            </div>
+            
+            <div class="book-grid">
+                <!-- Book 1 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <span class="book-badge">热门</span>
+                        <img src="https://picsum.photos/seed/book1/300/450" alt="小说封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">绝世神医：腹黑大小姐</h3>
+                        <p class="book-author">夜北</p>
+                        <div class="book-tags">
+                            <span>玄幻</span><span>穿越</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 2 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <span class="book-badge">完结</span>
+                        <img src="https://picsum.photos/seed/book2/300/450" alt="小说封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">霸道总裁的替身前妻</h3>
+                        <p class="book-author">安知晓</p>
+                        <div class="book-tags">
+                            <span>都市</span><span>言情</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 3 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book3/300/450" alt="小说封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">大奉打更人</h3>
+                        <p class="book-author">卖报小郎君</p>
+                        <div class="book-tags">
+                            <span>历史</span><span>悬疑</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 4 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <span class="book-badge">新书</span>
+                        <img src="https://picsum.photos/seed/book4/300/450" alt="小说封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">第一序列</h3>
+                        <p class="book-author">会说话的肘子</p>
+                        <div class="book-tags">
+                            <span>科幻</span><span>末世</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 5 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book5/300/450" alt="小说封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">鬼吹灯</h3>
+                        <p class="book-author">天下霸唱</p>
+                        <div class="book-tags">
+                            <span>悬疑</span><span>盗墓</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 6 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book6/300/450" alt="小说封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">何以笙箫默</h3>
+                        <p class="book-author">顾漫</p>
+                        <div class="book-tags">
+                            <span>言情</span><span>都市</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">📖</div>
+                        <h3>正版版权</h3>
+                        <p>精选全网优质正版版权小说，支持作者，阅读更安心。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🎧</div>
+                        <h3>听书模式</h3>
+                        <p>支持一键听书，解放双眼，随时随地享受有声阅读。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">💾</div>
+                        <h3>离线下载</h3>
+                        <p>WiFi环境下批量下载，无网也能畅读，省流量更省心。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download App CTA -->
+        <section class="container">
+            <div class="download-section">
+                <div class="download-container">
+                    <div class="download-text">
+                        <h2>下载番茄小说免费版</h2>
+                        <p>手机端体验更佳，海量书籍一键同步，离线阅读不迷路。</p>
+                        <div class="app-buttons">
+                            <a href="#" class="app-btn">
+                                <span>App Store</span>
+                            </a>
+                            <a href="#" class="app-btn">
+                                <span>Android</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="font-size: 80px; opacity: 0.3;">📱</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container" style="padding: 60px 0;">
+            <h2 class="section-title">常见问题</h2>
+            <div style="max-width: 800px;">
+                <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
+                    <summary style="cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>番茄小说免费版是收费的吗？</span>
+                        <span style="color: var(--primary-color);">+</span>
+                    </summary>
+                    <p style="margin-top: 12px; color: var(--text-secondary);">番茄小说免费版大部分小说内容均可免费阅读，部分独家精品书籍可能需要开通会员。会员费用低廉，可享受去广告、免费读VIP书籍等特权。</p>
+                </details>
+                <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
+                    <summary style="cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>如何开启无广告阅读模式？</span>
+                        <span style="color: var(--primary-color);">+</span>
+                    </summary>
+                    <p style="margin-top: 12px; color: var(--text-secondary);">您可以通过开通番茄小说会员，即可享受全站无广告畅读特权。在设置中也可以尝试关闭部分推荐信息。</p>
+                </details>
+                <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
+                    <summary style="cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>支持哪些设备？</span>
+                        <span style="color: var(--primary-color);">+</span>
+                    </summary>
+                    <p style="margin-top: 12px; color: var(--text-secondary);">番茄小说免费版支持iOS、Android手机及平板设备，同时支持网页端访问，数据多端同步。</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>番茄小说免费版</h2>
+                    <p>致力于为用户提供海量正版、免费、优质的阅读体验。让阅读成为一种生活方式。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 番茄小说免费版. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
