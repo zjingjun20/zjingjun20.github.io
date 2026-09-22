@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="探索优雅与魅力的完美结合，为您提供高品质、高舒适度的性感内衣选购指南与搭配建议，打造自信迷人的个人风格。">
+    <meta name="keywords" content="情趣内衣美女,性感内衣,女士内衣,情趣睡衣,魅力穿搭">
+    <title>情趣内衣美女-优雅魅力与舒适穿搭指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --secondary-color: #faedcd;
+            --accent-color: #e07a5f;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #fdfbf7;
+            --bg-white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/romantic/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn Up 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(224, 122, 95, 0.4);
+        }
+
+        .cta-btn:hover {
+            background-color: #c66a4d;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-light);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Category Section */
+        .categories {
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 350px;
+            group: cursor;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+        }
+
+        .category-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-overlay span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Guide Section */
+        .guide {
+            background-color: var(--bg-white);
+        }
+
+        .guide-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .guide-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-image img {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .guide-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .guide-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            text-align: justify;
+        }
+
+        .check-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Selection Tips */
+        .tips {
+            background-color: var(--secondary-color);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .tip-item {
+            background: rgba(255,255,255,0.6);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .tip-item h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tip-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--bg-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--text-gray);
+            display: none;
+            padding-left: 0.5rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                display: none; /* Simplified for single file demo */
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-layout {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">LUMIÈRE</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#categories">风格分类</a></li>
+                    <li><a href="#guide">穿搭指南</a></li>
+                    <li><a href="#tips">选购建议</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>发现内在自信与外在魅力</h1>
+            <p>精选高品质性感内衣与优雅睡衣，为您打造舒适与时尚并存的私享空间。探索属于您的独特风格。</p>
+            <a href="#categories" class="cta-btn">开始探索</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section-padding features">
+        <div class="container">
+            <div class="features-grid">
+                <article class="feature-card">
+                    <span class="feature-icon">✨</span>
+                    <h3>精选面料</h3>
+                    <p>采用高弹透气亲肤材质，确保长时间穿着的舒适体验，呵护娇嫩肌肤。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">👗</span>
+                    <h3>多样款式</h3>
+                    <p>从经典蕾丝到现代设计，涵盖吊带、背心、连体裤等多种风格，满足不同需求。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>私密配送</h3>
+                    <p>严格的隐私保护政策，包装简约低调，确保您的购物体验绝对安全私密。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="section-padding categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>风格分类</h2>
+                <p>探索不同风格的内衣系列，找到最契合您个性和场合的选择。</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="https://picsum.photos/seed/lace1/400/500.jpg" alt="精致蕾丝系列">
+                    <div class="category-overlay">
+                        <h3>精致蕾丝系列</h3>
+                        <span>浪漫与性感的经典诠释</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://picsum.photos/seed/silk2/400/500.jpg" alt="丝绸缎面系列">
+                    <div class="category-overlay">
+                        <h3>丝绸缎面系列</h3>
+                        <span>奢华光泽与极致顺滑</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://picsum.photos/seed/nightwear3/400/500.jpg" alt="舒适家居睡衣">
+                    <div class="category-overlay">
+                        <h3>舒适家居睡衣</h3>
+                        <span>柔软居家，自在放松</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://picsum.photos/seed/lingerie4/400/500.jpg" alt="时尚内衣套装">
+                    <div class="category-overlay">
+                        <h3>时尚内衣套装</h3>
+                        <span>潮流设计，展现自信曲线</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section id="guide" class="section-padding guide">
+        <div class="container guide-layout">
+            <div class="guide-image">
+                <img src="https://picsum.photos/seed/womanfashion/600/400.jpg" alt="内衣搭配指南示意图">
+            </div>
+            <div class="guide-content">
+                <h2>如何选择适合自己的款式</h2>
+                <p>选择内衣不仅是关于外观，更是关于舒适度和自信心的提升。正确的选择能修饰身形，提升整体气质。</p>
+                <ul class="check-list">
+                    <li><strong>了解自身身形：</strong>梨形身材适合高腰设计，苹果形身材可选择深V或吊带款式。</li>
+                    <li><strong>关注材质舒适度：</strong>敏感肌建议选择纯棉或有机棉，追求光泽感可选真丝。</li>
+                    <li><strong>场合搭配需求：</strong>日常居家以舒适为主，特殊场合可选择更具设计感的款式。</li>
+                    <li><strong>尺码选择技巧：</strong>参考品牌尺码表，测量胸围和腰围，确保合身不勒。</li>
+                </ul>
+                <br>
+                <a href="#" class="cta-btn" style="padding: 0.6rem 2rem; font-size: 0.9rem;">查看尺码指南</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selection Tips -->
+    <section id="tips" class="section-padding tips">
+        <div class="container">
+            <div class="section-header">
+                <h2>选购与保养小贴士</h2>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h3>🛡️ 质量鉴别</h3>
+                    <p>购买时检查缝线是否平整，蕾丝是否牢固。优质的内衣通常会有良好的弹性回弹力。</p>
+                </div>
+                <div class="tip-item">
+                    <h3>💧 清洗与保养</h3>
+                    <p>建议手洗或使用洗衣袋，使用中性洗涤剂。避免暴晒，平铺晾干可延长使用寿命。</p>
+                </div>
+                <div class="tip-item">
+                    <h3>📏 尺码试穿</h3>
+                    <p>不同品牌的尺码标准可能不同。收到商品后建议立即试穿，如有不合适及时联系客服。</p>
+                </div>
+                <div class="tip-item">
+                    <h3>🚫 避免误区</h3>
+                    <p>不要为了追求小一码而牺牲舒适度。过紧的束身内衣不利于血液循环和身体健康。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding faq">
+        <div class="container faq-container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">收到商品后发现有瑕疵怎么办？</div>
+                <div class="faq-answer">请您在收到商品后第一时间检查，如有瑕疵或尺码不合，请拍照联系客服，我们支持7天无理由退换货。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">包装是否保密？</div>
+                <div class="faq-answer">是的，我们使用极简风格的包装，不显示任何品牌LOGO或敏感信息，确保收货人的隐私。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">尺码表在哪里查看？</div>
+                <div class="faq-answer">在商品详情页或网站顶部导航栏的“尺码指南”中可以找到详细的测量方法和尺码对照表。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">支持哪些支付方式？</div>
+                <div class="faq-answer">支持微信支付、支付宝、银行卡等多种主流支付方式，交易安全有保障。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>LUMIÈRE</h4>
+                    <p>致力于为您提供高品质、高舒适度的性感内衣与家居服饰。让每一位女性都能找到自信与美丽的源泉。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">新品上市</a></li>
+                        <li><a href="#">会员中心</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#">尺码测量</a></li>
+                        <li><a href="#">退换货政策</a></li>
+                        <li><a href="#">物流查询</a></li>
+                        <li><a href="#">隐私声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">小红书</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LUMIÈRE内衣. All Rights Reserved. 本网站仅供展示，请遵守当地法律法规。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
