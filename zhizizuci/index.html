@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="只字组词在线查询工具，提供只字在汉语中的常用组词、成语、拼音及释义。帮助用户快速学习汉字搭配，了解只字在不同语境下的用法与含义。">
+    <meta name="keywords" content="只字组词, 只字, 汉字组词, 汉语词典, 汉字搭配">
+    <title>只字组词-汉语常用词汇搭配与释义查询</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --text-main: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 32px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 var(--radius) var(--radius);
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search Area */
+        .search-box {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 12px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Character Info Section */
+        .char-info {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 32px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 32px;
+        }
+
+        .char-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .char-visual .big-char {
+            font-size: 6rem;
+            font-weight: bold;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .char-visual .pinyin {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-family: "KaiTi", "楷体", serif;
+        }
+
+        .char-details h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .char-details .definition {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            background: #f0f9ff;
+            padding: 16px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .char-details .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .stat-item strong {
+            color: var(--text-main);
+        }
+
+        /* Groups Section */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .word-group {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .group-header {
+            padding: 20px 24px;
+            background-color: #f9fafb;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .group-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .word-list {
+            padding: 0;
+            list-style: none;
+        }
+
+        .word-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+        }
+
+        .word-item:last-child {
+            border-bottom: none;
+        }
+
+        .word-item:hover {
+            background-color: #f9fafb;
+        }
+
+        .word-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .word-meaning {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar / Related */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .related-char {
+            text-align: center;
+            padding: 12px;
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .related-char:hover {
+            background-color: #e5e7eb;
+            transform: translateY(-2px);
+        }
+
+        .related-char span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .related-char small {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+                gap: 16px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .char-info {
+                grid-template-columns: 1fr;
+            }
+
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .btn-primary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <span>汉字组词</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">常用字</a></li>
+                    <li><a href="#">成语查询</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>只字组词与释义查询</h1>
+            <p>探索汉字“只”的丰富用法，查找常用搭配、成语及详细释义。</p>
+        </section>
+
+        <!-- Search Section -->
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="输入汉字查询组词..." value="只">
+            <button class="btn-primary">查询</button>
+        </div>
+
+        <!-- Main Character Info -->
+        <section class="char-info">
+            <div class="char-visual">
+                <div class="big-char">只</div>
+                <div class="pinyin">zhī</div>
+            </div>
+            <div class="char-details">
+                <h2>只</h2>
+                <div class="stats">
+                    <span class="stat-item">拼音：<strong>zhī</strong></span>
+                    <span class="stat-item">部首：口</span>
+                    <span class="stat-item">笔画：4</span>
+                </div>
+                <div class="definition">
+                    <strong>释义：</strong>
+                    <p>1. 量词，用于成对的东西或成倍的东西。<br>2. 单独的，一个的。<br>3. 仅仅，只有。</p>
+                </div>
+                <div class="usage-tips">
+                    <p style="font-size: 0.95rem; color: var(--text-secondary);"><strong>用法提示：</strong>“只”字在口语中常读作 zhǐ（第三声），表示“仅仅、只有”的意思；在表示数量时读作 zhī（第一声）。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="layout-grid">
+            <!-- Left Column: Word Lists -->
+            <div class="content-area">
+                <h3 class="section-title">常用组词</h3>
+                <div class="word-group">
+                    <div class="group-header">
+                        <span class="group-title">常用搭配</span>
+                    </div>
+                    <ul class="word-list">
+                        <li class="word-item">
+                            <span class="word-text">只有</span>
+                            <span class="word-meaning">副词，表示唯一条件</span>
+                        </li>
+                        <li class="word-item">
+                            <span class="word-text">一只</span>
+                            <span class="word-meaning">量词，用于动物或器物</span>
+                        </li>
+                        <li class="word-item">
+                            <span class="word-text">只要</span>
+                            <span class="word-meaning">连词，表示条件关系</span>
+                        </li>
+                        <li class="word-item">
+                            <span class="word-text">一只手</span>
+                            <span class="word-meaning">具体数量搭配</span>
+                        </li>
+                        <li class="word-item">
+                            <span class="word-text">只言片语</span>
+                            <span class="word-meaning">零碎的语句</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">成语与四字词语</h3>
+                <div class="word-group">
+                    <div class="group-header">
+                        <span class="group-title">精选成语</span>
+                    </div>
+                    <ul class="word-list">
+                        <li class="word-item">
+                            <span class="word-text">只字不提</span>
+                            <span class="word-meaning">一个字也不提起</span>
+                        </li>
+                        <li class="word-item">
+                            <span class="word-text">只争朝夕</span>
+                            <span class="word-meaning">抓紧时间，力争在最短的时间内达到目的</span>
+                        </li>
+                        <li class="word-item">
+                            <span class="word-text">只影孤形</span>
+                            <span class="word-meaning">形容孤单，没有伴侣</span>
+                        </li>
+                        <li class="word-item">
+                            <span class="word-text">只知其一</span>
+                            <span class="word-meaning">只知道一件事，不知道另一件事</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">常见反义词与近义词</h3>
+                <div class="word-group">
+                    <ul class="word-list">
+                        <li class="word-item">
+                            <span class="word-text">近义词：唯、独</span>
+                            <span class="word-meaning">表示单一的属性</span>
+                        </li>
+                        <li class="word-item">
+                            <span class="word-text">反义词：双、多</span>
+                            <span class="word-meaning">表示成对或众多</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <div class="sidebar-card">
+                    <h3>常用汉字推荐</h3>
+                    <div class="related-grid">
+                        <div class="related-char">
+                            <span>人</span>
+                            <small>人字组词</small>
+                        </div>
+                        <div class="related-char">
+                            <span>大</span>
+                            <small>大字组词</small>
+                        </div>
+                        <div class="related-char">
+                            <span>小</span>
+                            <small>小字组词</small>
+                        </div>
+                        <div class="related-char">
+                            <span>一</span>
+                            <small>一字组词</small>
+                        </div>
+                        <div class="related-char">
+                            <span>天</span>
+                            <small>天字组词</small>
+                        </div>
+                        <div class="related-char">
+                            <span>地</span>
+                            <small>地字组词</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>知识拓展</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 12px;">
+                        “只”字在汉字中属于简单字，构造上由“口”和“八”组成，但在字形演变中有着复杂的字源。
+                    </p>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary);">
+                        除了作为量词和副词，它常用于文学作品中描写孤独、单一或极限的状态。
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>汉字组词查询工具 - 致力于提供最准确的汉字搭配与释义</p>
+            <p>&copy; 2023 汉字组词网 版权所有</p>
+        </div>
+    </footer>
+
+</body>
+</html>
