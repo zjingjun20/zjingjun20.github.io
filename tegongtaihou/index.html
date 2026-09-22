@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特工太后狠牛叉 - 沉浸式古风权谋小说阅读平台</title>
+    <meta name="description" content="特工太后狠牛叉，讲述特工穿越成为冷宫弃妇，凭借狠辣手段与现代智慧，在深宫权谋中步步为营，逆袭成为一代铁血太后的精彩故事。提供正版阅读、角色解析及剧情互动。">
+    <meta name="keywords" content="特工太后狠牛叉,特工太后狠牛叉小说,古言小说,穿越小说,宫廷权谋,小说阅读">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-red: #8B0000;
+            --accent-gold: #D4AF37;
+            --dark-bg: #121212;
+            --card-bg: #1E1E1E;
+            --text-main: #E0E0E0;
+            --text-muted: #A0A0A0;
+            --border-color: #333;
+            --font-serif: 'Songti SC', 'SimSun', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary-red);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-red);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-gold);
+            color: var(--dark-bg);
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #A50000;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/royal/1920/1080.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--accent-gold);
+            padding: 4px 12px;
+            font-size: 12px;
+            color: var(--accent-gold);
+            border-radius: 20px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        .more-link {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .more-link:hover {
+            color: var(--primary-red);
+        }
+
+        /* Synopsis Card */
+        .synopsis-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-red);
+            margin-bottom: 50px;
+        }
+
+        .synopsis-text {
+            font-size: 16px;
+            color: #ccc;
+            text-indent: 2em;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Character Grid */
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .char-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .char-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .char-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: sepia(20%);
+            transition: filter 0.3s;
+        }
+
+        .char-card:hover .char-img {
+            filter: sepia(0%);
+        }
+
+        .char-info {
+            padding: 20px;
+        }
+
+        .char-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .char-role {
+            font-size: 14px;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+
+        .char-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Latest Chapters List */
+        .chapter-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 25px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chapter-title {
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        .chapter-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .chapter-status {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .status-update {
+            background: rgba(139, 0, 0, 0.3);
+            color: var(--primary-red);
+        }
+
+        .status-finished {
+            background: rgba(0, 100, 0, 0.3);
+            color: #4caf50;
+        }
+
+        /* Ranking Section */
+        .ranking-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ranking-table th {
+            text-align: left;
+            padding: 15px;
+            background: #252525;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .ranking-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .rank-num {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .rank-1 { background: var(--primary-red); color: white; }
+        .rank-2 { background: #555; color: white; }
+        .rank-3 { background: #8B4513; color: white; }
+
+        .rank-title {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .rank-title:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
+        .rank-stats {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .sidebar-box {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+
+        .ad-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 14px;
+            border: 1px dashed #444;
+            margin-bottom: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-muted);
+            padding-left: 5px;
+            border-left: 2px solid var(--primary-red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 50px 20px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .ranking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">特工<span>太后</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">书库</a></li>
+                    <li><a href="#">分类</a></li>
+                    <li><a href="#">排行</a></li>
+                    <li><a href="#">书架</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">免费阅读</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>特工太后狠牛叉</h1>
+                <div class="hero-tags">
+                    <span class="tag">穿越</span>
+                    <span class="tag">宫廷</span>
+                    <span class="tag">爽文</span>
+                    <span class="tag">权谋</span>
+                </div>
+                <p>特种兵王穿越成废后，手撕渣男，智斗权臣。看她如何以雷霆手段，在这个吃人的后宫中杀出一条血路，坐拥天下。</p>
+                <button class="btn btn-primary" style="font-size: 18px; padding: 12px 40px;">开始阅读</button>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Synopsis -->
+            <article class="synopsis-card">
+                <h2 style="font-family: var(--font-serif); font-size: 24px; margin-bottom: 15px; color: var(--accent-gold);">作品简介</h2>
+                <p class="synopsis-text">
+                    <span class="highlight">特工太后狠牛叉</span> 讲述了现代顶尖特工“冷月”在一次任务中不幸牺牲，再次睁眼竟成了大梁国最受冷落的废后苏婉。面对皇帝的冷嘲热讽、前朝权臣的步步紧逼以及后宫嫔妃的刁难，冷月没有选择忍气吞声。她凭借现代的格斗技巧、缜密的逻辑思维和对人性的深刻洞察，迅速在危机四伏的深宫中站稳脚跟。
+                </p>
+                <p class="synopsis-text">
+                    从夜闯皇宫揭露贪腐，到设局反击羞辱恶毒贵妃，再到联手皇子夺嫡，冷月步步为营，将那些试图算计她的人玩弄于股掌之间。最终，她不仅洗清了冤屈，更让那位高高在上的皇帝对她刮目相看，甘愿臣服在她的裙摆之下，成就一段千古流传的<span class="highlight">特工太后狠牛叉</span>的传奇佳话。
+                </p>
+            </article>
+
+            <!-- Characters -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">核心人物</h2>
+                    <a href="#" class="more-link">查看全部 &gt;</a>
+                </div>
+                <div class="char-grid">
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/queen/400/500.jpg" alt="苏婉" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">苏婉（冷月）</div>
+                            <div class="char-role">女主角 / 废后</div>
+                            <p class="char-desc">前特种兵王，性格冷艳决绝，擅长近身格斗与心理战术。穿越后誓要夺回属于自己的尊严与权力。</p>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/emperor/400/500.jpg" alt="萧景" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">萧景</div>
+                            <div class="char-role">男主角 / 皇帝</div>
+                            <p class="char-desc">表面冷酷无情实则深藏不露的帝王。起初对苏婉不屑一顾，后被其独特的魅力折服，成为最强后盾。</p>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/maid/400/500.jpg" alt="林贵妃" class="char-img">
+                        <div class="char-info">
+                            <div class="char-name">林贵妃</div>
+                            <div class="char-role">反派 / 贵妃</div>
+                            <p class="char-desc">出身名门，心机深沉，是苏婉在宫中最大的敌人，多次设计陷害未果，反被苏婉反杀。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rankings & Sidebar -->
+            <div class="ranking-container">
+                <div>
+                    <div class="section-header">
+                        <h2 class="section-title">热门推荐</h2>
+                        <a href="#" class="more-link">更多 &gt;</a>
+                    </div>
+                    <table class="ranking-table">
+                        <thead>
+                            <tr>
+                                <th width="10%">排名</th>
+                                <th width="60%">作品名</th>
+                                <th width="30%">热度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rank-num rank-1">1</span></td>
+                                <td><a href="#" class="rank-title">特工太后狠牛叉</a></td>
+                                <td><span class="rank-stats">9.8分 | 128万</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-num rank-2">2</span></td>
+                                <td><a href="#" class="rank-title">冷宫弃妃：特工皇妃</a></td>
+                                <td><span class="rank-stats">9.5分 | 105万</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-num rank-3">3</span></td>
+                                <td><a href="#" class="rank-title">凤临天下：王妃13岁</a></td>
+                                <td><span class="rank-stats">9.6分 | 98万</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-num">4</span></td>
+                                <td><a href="#" class="rank-title">帝皇书：权谋天下</a></td>
+                                <td><span class="rank-stats">9.3分 | 85万</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-num">5</span></td>
+                                <td><a href="#" class="rank-title">摄政王的宠妃</a></td>
+                                <td><span class="rank-stats">9.1分 | 72万</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <aside>
+                    <div class="sidebar-box">
+                        <div class="sidebar-title">广告位</div>
+                        <div class="ad-placeholder">小说推广 Banner</div>
+                    </div>
+                    <div class="sidebar-box" style="margin-top: 30px;">
+                        <div class="sidebar-title">阅读指南</div>
+                        <ul style="font-size: 14px; color: #aaa; line-height: 2;">
+                            <li><a href="#">如何充值积分</a></li>
+                            <li><a href="#">书架使用说明</a></li>
+                            <li><a href="#">VIP章节权益</a></li>
+                            <li><a href="#">联系客服反馈</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Latest Chapters -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">最新章节</h2>
+                    <a href="#" class="more-link">查看目录 &gt;</a>
+                </div>
+                <div class="chapter-list">
+                    <div class="chapter-item">
+                        <a href="#" class="chapter-title">第312章：最后的底牌</a>
+                        <div class="chapter-meta">
+                            <span>3天前</span>
+                            <span class="chapter-status status-update">连载中</span>
+                        </div>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#" class="chapter-title">第311章：皇后的反击</a>
+                        <div class="chapter-meta">
+                            <span>3天前</span>
+                            <span class="chapter-status status-update">连载中</span>
+                        </div>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#" class="chapter-title">第310章：深夜密会</a>
+                        <div class="chapter-meta">
+                            <span>4天前</span>
+                            <span class="chapter-status status-update">连载中</span>
+                        </div>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#" class="chapter-title">第309章：贵妃之死</a>
+                        <div class="chapter-meta">
+                            <span>5天前</span>
+                            <span class="chapter-status status-update">连载中</span>
+                        </div>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#" class="chapter-title">第308章：布局</a>
+                        <div class="chapter-meta">
+                            <span>1周前</span>
+                            <span class="chapter-status status-update">连载中</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="faq-section">
+                <div class="section-header">
+                    <h2 class="section-title">阅读常见问题</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">《特工太后狠牛叉》在哪里可以看？</div>
+                    <div class="faq-answer">您可以直接在首页点击“开始阅读”按钮，即可免费阅读最新章节。部分VIP章节需要消耗积分或开通会员。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">小说什么时候完结？</div>
+                    <div class="faq-answer">目前《特工太后狠牛叉》仍在连载中，预计未来一年内完结。请关注我们的更新动态。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持离线下载吗？</div>
+                    <div class="faq-answer">支持。开通会员后，您可以将喜欢的章节下载到本地，随时随地离线阅读。</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">特工<span>太后</span></div>
+                <p style="color: #666; font-size: 13px; margin-top: 15px; line-height: 1.8;">
+                    专注提供高质量古风言情、穿越权谋小说阅读体验。让每一个文字都触动心灵，让每一次阅读都成为享受。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">古言穿越</a></li>
+                    <li><a href="#">宫廷权谋</a></li>
+                    <li><a href="#">女强爽文</a></li>
+                    <li><a href="#">虐恋情深</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">邮箱：support@agentempress.com</a></li>
+                    <li><a href="#">客服QQ：123456789</a></li>
+                    <li style="margin-top: 10px;">
+                        <span style="font-size: 24px;">WeChat</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 特工太后狠牛叉阅读网 版权所有 | 仅供学习交流使用，请支持正版</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
