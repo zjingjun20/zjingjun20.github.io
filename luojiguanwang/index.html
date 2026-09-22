@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="逻辑官网 - 提供专业逻辑思维训练、批判性思维课程及思维工具箱。帮助个人与团队提升分析能力、解决问题效率与决策质量，构建严谨的思考体系。">
+    <meta name="keywords" content="逻辑官网, 逻辑思维, 批判性思维, 逻辑训练, 思维工具, 决策分析">
+    <title>逻辑官网 - 专业逻辑思维训练与决策分析平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #64748b;
+            --accent-color: #0f172a;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: var(--primary-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        /* Features Grid */
+        .features {
+            background-color: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Tools Section */
+        .tools {
+            background-color: var(--bg-light);
+        }
+
+        .tool-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .tool-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .tool-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .tool-image {
+            height: 180px;
+            background-color: #cbd5e1;
+            position: relative;
+        }
+        
+        .tool-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tool-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .tool-content {
+            padding: 24px;
+        }
+
+        .tool-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+        }
+
+        .tool-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .tool-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            background-color: var(--bg-white);
+        }
+
+        .curriculum-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .curriculum-item {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            padding: 30px 0;
+        }
+
+        .curriculum-item:last-child {
+            border-bottom: none;
+        }
+
+        .curriculum-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #e2e8f0;
+            line-height: 1;
+            margin-right: 30px;
+            min-width: 60px;
+        }
+
+        .curriculum-content h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .curriculum-content p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+        }
+
+        .cta-section .btn:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--accent-color);
+            color: #94a3b8;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .grid-4, .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .curriculum-item {
+                flex-direction: column;
+            }
+            .curriculum-number {
+                margin-bottom: 15px;
+            }
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+            }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .header-actions {
+                order: 2;
+                margin-left: auto;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-actions {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">L</div>
+                逻辑官网
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">核心能力</a></li>
+                    <li><a href="#tools">思维工具</a></li>
+                    <li><a href="#curriculum">课程体系</a></li>
+                    <li><a href="#resources">学习资源</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费试用</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="badge">升级大脑运算速度</span>
+                <h1>掌握逻辑思维，<br>让决策更精准高效</h1>
+                <p>逻辑官网致力于提供系统化的逻辑思维训练课程、可视化思维工具及批判性思维分析框架。无论您是职场管理者、学生还是终身学习者，都能在这里找到提升思考质量的实用方案。</p>
+                <div class="hero-buttons">
+                    <a href="#curriculum" class="btn btn-primary">开始系统学习</a>
+                    <a href="#tools" class="btn btn-outline">探索思维工具</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section-padding features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么需要逻辑训练？</h2>
+                    <p>在信息过载的时代，清晰、严谨的逻辑是解决复杂问题的核心能力。</p>
+                </div>
+                <div class="grid grid-3">
+                    <article class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>批判性思考</h3>
+                        <p>学会独立分析信息来源，识别偏见、谬误与逻辑陷阱，避免被情绪和伪科学误导。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🧩</div>
+                        <h3>结构化思维</h3>
+                        <p>掌握金字塔原理，将复杂问题拆解为清晰的层级结构，提升沟通与表达效率。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>高效决策</h3>
+                        <p>通过逻辑推演和概率分析，减少决策中的盲点，做出更理性、更具长远价值的判断。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="section-padding tools">
+            <div class="container">
+                <div class="section-header">
+                    <h2>在线思维工具箱</h2>
+                    <p>可视化工具辅助您进行头脑风暴、逻辑梳理与方案推演。</p>
+                </div>
+                <div class="grid grid-3 tool-grid">
+                    <article class="tool-card">
+                        <div class="tool-image">
+                            <span class="tool-badge">热门</span>
+                            <img src="https://picsum.photos/seed/logic1/400/250" alt="思维导图工具">
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">逻辑导图生成器</h3>
+                            <p class="tool-desc">一键将文字要点转化为层级分明的思维导图，支持多种导出格式。</p>
+                            <a href="#" class="tool-link">立即使用 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="tool-card">
+                        <div class="tool-image">
+                            <img src="https://picsum.photos/seed/logic2/400/250" alt="SWOT分析工具">
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">SWOT 分析模板</h3>
+                            <p class="tool-desc">快速生成战略分析框架，帮助您从优势、劣势、机会、威胁四个维度全面评估现状。</p>
+                            <a href="#" class="tool-link">查看模板 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="tool-card">
+                        <div class="tool-image">
+                            <span class="tool-badge">专业版</span>
+                            <img src="https://picsum.photos/seed/logic3/400/250" alt="决策树工具">
+                        </div>
+                        <div class="tool-content">
+                            <h3 class="tool-title">决策树可视化</h3>
+                            <p class="tool-desc">模拟不同决策路径的后果，计算期望值，辅助团队进行复杂决策。</p>
+                            <a href="#" class="tool-link">开始推演 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="section-padding curriculum">
+            <div class="container">
+                <div class="section-header">
+                    <h2>进阶课程体系</h2>
+                    <p>从基础逻辑入门到高阶论证分析，循序渐进构建思维大厦。</p>
+                </div>
+                <div class="curriculum-list">
+                    <div class="curriculum-item">
+                        <div class="curriculum-number">01</div>
+                        <div class="curriculum-content">
+                            <h3>基础逻辑学导论</h3>
+                            <p>学习概念、判断、推理的基本形式，理解形式逻辑与自然语言的关系，建立严谨的思维起点。</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="curriculum-number">02</div>
+                        <div class="curriculum-content">
+                            <h3>批判性阅读与写作</h3>
+                            <p>掌握阅读理解的高级技巧，学会识别文本中的论证结构，并运用逻辑语言进行清晰、有力的表达。</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="curriculum-number">03</div>
+                        <div class="curriculum-content">
+                            <h3>演绎推理与归纳推理</h3>
+                            <p>深入探讨三段论、假言推理等演绎方法，以及概率统计、类比推理等归纳方法在实际中的应用。</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="curriculum-number">04</div>
+                        <div class="curriculum-content">
+                            <h3>系统思维与战略规划</h3>
+                            <p>学习如何从整体上把握系统要素，运用系统动力学模型解决复杂组织管理问题。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>准备好提升您的思考层级了吗？</h2>
+                <p>加入逻辑官网，与数万名学习者一起，用逻辑武装头脑，用理性驱动未来。</p>
+                <a href="#" class="btn">注册免费账户</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><div class="logo-icon" style="background:transparent; color:white;">L</div> 逻辑官网</h3>
+                    <p>专注逻辑思维教育与研究，致力于为个人和企业提供最专业的思维训练解决方案。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">核心团队</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>学习资源</h4>
+                    <ul>
+                        <li><a href="#">思维导图库</a></li>
+                        <li><a href="#">逻辑练习题</a></li>
+                        <li><a href="#">行业报告</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 逻辑官网 版权所有. 本站所有课程及工具仅供学习参考，不构成投资建议。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
