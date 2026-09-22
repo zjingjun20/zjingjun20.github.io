@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画版三国演义-经典动画全集与剧情解析</title>
+    <meta name="description" content="动画版三国演义专题页，提供经典国产动画《三国演义》高清全集观看指南、剧情人物解析、分集剧情介绍及经典台词回顾。">
+    <meta name="keywords" content="动画版三国演义,三国演义动画,经典国产动画,三国演义分集剧情">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8b0000; /* 深红，象征三国 */
+            --secondary-color: #c0392b; /* 亮红 */
+            --gold: #d4af37; /* 金色，象征历史与荣耀 */
+            --bg-color: #f9f7f2; /* 米色纸张质感 */
+            --text-color: #2c2c2c;
+            --light-text: #666;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "SimHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            border: 2px solid var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/sanguo_hero/1920/600') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        /* 内容区块通用样式 */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 精选分集卡片 */
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .episode-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            font-size: 12px;
+            color: var(--gold);
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-bottom: 15px;
+            height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        /* 经典人物 */
+        .characters-section {
+            background-color: #fff;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .char-item {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .char-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 3px solid var(--gold);
+            padding: 3px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+
+        .char-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .char-role {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        /* 剧情解析 */
+        .analysis-section {
+            background-color: #f4f1ea; /* 深一点的纸张色 */
+        }
+
+        .analysis-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .analysis-content h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .analysis-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .analysis-sidebar {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 15px;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-list span {
+            font-size: 13px;
+            color: var(--light-text);
+        }
+
+        /* 观看指南/FAQ */
+        .guide-section {
+            background-color: #fff;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .guide-card {
+            padding: 30px;
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .guide-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .guide-card h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .guide-card p {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2b2b2b;
+            color: #aaa;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .char-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .analysis-container {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .hero {
+                height: 400px;
+            }
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>三</span> 动画版三国演义
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#episodes">分集剧情</a></li>
+                    <li><a href="#characters">经典人物</a></li>
+                    <li><a href="#analysis">深度解析</a></li>
+                    <li><a href="#guide">观看指南</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>动画版三国演义</h1>
+            <p>重温经典，感受水墨风骨下的英雄史诗</p>
+            <div>
+                <a href="#episodes" class="btn">立即观看</a>
+                <a href="#analysis" class="btn btn-outline">剧情解析</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 精选分集 -->
+    <section id="episodes" class="container">
+        <div class="section-header">
+            <h2>精彩分集推荐</h2>
+            <p>精选动画版三国演义中的高光时刻与经典桥段</p>
+        </div>
+        <div class="episodes-grid">
+            <!-- 卡片 1 -->
+            <article class="episode-card">
+                <img src="https://picsum.photos/seed/sanguo1/400/300" alt="桃园三结义" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">开篇</span>
+                    <h3 class="card-title">桃园三结义</h3>
+                    <p class="card-desc">东汉末年，朝政腐败，张飞、刘备、关羽在涿郡相遇，三人意气相投，遂在桃园祭告天地，结为异姓兄弟。</p>
+                    <div class="card-footer">
+                        <span>第1集</span>
+                        <a href="#" style="color:var(--primary-color)">查看详情 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 卡片 2 -->
+            <article class="episode-card">
+                <img src="https://picsum.photos/seed/sanguo2/400/300" alt="三英战吕布" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">高潮</span>
+                    <h3 class="card-title">三英战吕布</h3>
+                    <p class="card-desc">虎牢关前，吕布连斩盟军数员大将，刘关张三兄弟合力围攻，大战八十回合，展现三国猛将风采。</p>
+                    <div class="card-footer">
+                        <span>第8集</span>
+                        <a href="#" style="color:var(--primary-color)">查看详情 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 卡片 3 -->
+            <article class="episode-card">
+                <img src="https://picsum.photos/seed/sanguo3/400/300" alt="草船借箭" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">智谋</span>
+                    <h3 class="card-title">草船借箭</h3>
+                    <p class="card-desc">周瑜妒忌诸葛亮才干，命其十日造箭十万。诸葛亮利用大雾天气，草船借得曹操箭矢，不费一兵一卒。</p>
+                    <div class="card-footer">
+                        <span>第23集</span>
+                        <a href="#" style="color:var(--primary-color)">查看详情 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 卡片 4 -->
+            <article class="episode-card">
+                <img src="https://picsum.photos/seed/sanguo4/400/300" alt="空城计" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">绝境</span>
+                    <h3 class="card-title">空城计</h3>
+                    <p class="card-desc">司马懿率十五万大军西城，诸葛亮城中无兵。他大开城门，焚香操琴，以此智退敌军。</p>
+                    <div class="card-footer">
+                        <span>第45集</span>
+                        <a href="#" style="color:var(--primary-color)">查看详情 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 经典人物 -->
+    <section id="characters" class="characters-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心人物志</h2>
+                <p>动画版对经典角色的生动演绎与性格刻画</p>
+            </div>
+            <div class="char-grid">
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/zhugeliang/200/200" alt="诸葛亮" class="char-avatar">
+                    <div class="char-name">诸葛亮</div>
+                    <div class="char-role">蜀汉丞相</div>
+                </div>
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/caocao/200/200" alt="曹操" class="char-avatar">
+                    <div class="char-name">曹操</div>
+                    <div class="char-role">魏武帝</div>
+                </div>
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/liubei/200/200" alt="刘备" class="char-avatar">
+                    <div class="char-name">刘备</div>
+                    <div class="char-role">蜀汉昭烈帝</div>
+                </div>
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/zhangfei/200/200" alt="张飞" class="char-avatar">
+                    <div class="char-name">张飞</div>
+                    <div class="char-role">蜀汉五虎上将</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section id="analysis" class="analysis-section">
+        <div class="container analysis-container">
+            <div class="analysis-content">
+                <h3>动画版的艺术特色</h3>
+                <div class="analysis-text">
+                    <p>《三国演义》动画版（1981年版）是中国美术电影中的一座丰碑。其最大特色在于将中国传统的水墨画技法与动画技术完美结合，画面意境深远，既有写意的留白，又有细腻的笔触。不同于西方动画的夸张变形，国产水墨动画更讲究神韵与气韵生动。</p>
+                    <p>在剧情处理上，动画版忠实于原著精神，选取了最具代表性的故事片段进行改编。人物造型古朴典雅，既保留了历史人物的威严，又赋予了鲜明的性格特征。例如诸葛亮的羽扇纶巾、曹操的阴鸷多疑、赵云的英勇无畏，都通过细腻的肢体语言和面部表情得以展现。</p>
+                    <p>此外，配乐与音效的运用也极为考究，悠扬的古琴声与激昂的战鼓声相得益彰，极大地增强了画面的感染力，让观众在观看时仿佛置身于那个金戈铁马的三国时代。</p>
+                </div>
+            </div>
+            <aside class="analysis-sidebar">
+                <h4 class="sidebar-title">必看篇章</h4>
+                <ul class="sidebar-list">
+                    <li>
+                        <a href="#">长坂坡七进七出</a>
+                        <span>展现赵云单骑救主的英雄气概</span>
+                    </li>
+                    <li>
+                        <a href="#">火烧赤壁</a>
+                        <span>周瑜与诸葛亮联手，以少胜多的经典战役</span>
+                    </li>
+                    <li>
+                        <a href="#">空城退敌</a>
+                        <span>诸葛亮心理博弈的巅峰之作</span>
+                    </li>
+                    <li>
+                        <a href="#">过五关斩六将</a>
+                        <span>关羽忠义精神的极致体现</span>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- 观看指南/FAQ -->
+    <section id="guide" class="guide-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>观看指南</h2>
+                <p>关于动画版三国演义的常见问题与观看建议</p>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon">📺</div>
+                    <h4>在哪里可以观看？</h4>
+                    <p>目前动画版《三国演义》多在各大正规视频平台的“经典动漫”或“怀旧专区”中可以找到正版资源，部分电视台重播频率也较高。</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">👶</div>
+                    <h4>适合儿童观看吗？</h4>
+                    <p>该片制作精良，价值观积极向上，虽然包含战争场面，但并未过度渲染暴力，非常适合作为儿童了解中国历史文化的入门教材。</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">🎨</div>
+                    <h4>画风有什么特点？</h4>
+                    <p>本片采用水墨动画风格，背景多为写意山水，人物线条流畅，色彩淡雅，具有极高的艺术收藏价值和审美价值。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>本站致力于弘扬中国传统文化，为动画爱好者提供《三国演义》相关的资讯、剧情解析与观看指引。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">全集目录</a></li>
+                        <li><a href="#">人物关系图</a></li>
+                        <li><a href="#">经典台词</a></li>
+                        <li><a href="#">评论讨论</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">中国动画史</a></li>
+                        <li><a href="#">经典文学赏析</a></li>
+                        <li><a href="#">传统文化推广</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：contact@sanguoanim.com</li>
+                        <li>地址：中国·某地动画文化产业园</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 动画版三国演义专题站 版权所有. 本站内容仅供学习交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
